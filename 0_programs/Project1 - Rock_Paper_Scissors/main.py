@@ -5,7 +5,9 @@ choices = ["r", "p", "s"]
 
 def get_user_choice():
     """
-    A function that prompts the user for a choice of 'r', 'p', or 's', converts the input to lowercase, and returns the user's choice.
+    A function that prompts the user  for a choice of 'r', 'p', or 's', converts the input to lowercase, and
+    checks if the input is valid. If the input is not valid, it prompts the user again until it returns the
+    user's choice.
     """
     user_input = input("Enter a choice (r, p, s): ")
     user_input = user_input.lower()
