@@ -2,6 +2,11 @@ from random import randint
 
 
 def play():
+    """
+       Function to play the Guess the number game.
+       The player has to guess a secret number between 1 and 100.
+       The function keeps track of the number of tries and stores high scores in a file.
+    """
     secret_number = randint(1, 100)
     guess = 0
     guess_count = 0
@@ -38,12 +43,11 @@ def play():
     try:
         with open("high_scores.txt", "r") as file:
             high_scores = file.read()
-            if high_scores == "":
+            previous_score = high_scores.split(" ")[-2]
+            if (high_scores == "") or (guess_count < int(previous_score)):
                 with open("high_scores.txt", "w") as f:
                     f.write(f"{username} guessed the number in {guess_count} tries")
-            elif guess_count < int(high_scores):
-                with open("high_scores.txt", "w") as f:
-                    f.write(f"{username} guessed the number in {guess_count} tries")
+
     except FileNotFoundError:
         with open("high_scores.txt", "w") as f:
             f.write(f"{username} guessed the number in {guess_count} tries")
