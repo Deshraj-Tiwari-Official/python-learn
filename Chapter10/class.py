@@ -1,7 +1,7 @@
 class Employee:
     """
     This class is used to create an employee.
-    The attributes are name, age and salary.
+    The attributes are name, name and salary.
     """
 
     # __<method>__ are called dunder methods.
